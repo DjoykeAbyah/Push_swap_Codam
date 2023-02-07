@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 18:00:30 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/02/06 20:28:46 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/02/07 17:53:10 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,14 @@
 
 # include "./Libft/libft.h"
 # include <stdlib.h>
+# include <stdio.h>
 
-typedef struct swap_list
+typedef struct t_list
 {
 	void				*content;
-	struct swap_list	*next;
-}							t_swaplist;
+	struct t_list		*next;
+}							t_swap;
+
+void	*ft_add_content(int argc, char **argv);
 
 #endif
