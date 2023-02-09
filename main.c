@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/06 20:31:03 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/02/07 17:54:03 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/02/09 11:52:35 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,17 @@
 
 int	main(int argc, char **argv)
 {
-	ft_add_content(argc, argv);
 }
+
+// void	*ft_add_content(int argc, char **argv)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (i < argc)
+// 	{
+// 		printf("argv[%d]: %s\n", i, argv[i]);
+// 		i++;
+// 	}
+// 	return (0);
+// }

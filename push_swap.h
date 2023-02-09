@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 18:00:30 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/02/07 17:53:10 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/02/09 11:55:06 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-typedef struct t_list
+typedef struct s_piece
 {
-	void				*content;
-	struct t_list		*next;
-}							t_swap;
+	int					value;
+	struct s_piece		*next;
+	struct s_piece		*previous;
+}							t_piece;
 
-void	*ft_add_content(int argc, char **argv);
+t_swap	*ft_add_content(int *stack_a, char *str_input);
 
 #endif
