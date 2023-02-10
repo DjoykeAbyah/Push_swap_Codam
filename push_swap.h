@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 18:00:30 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/02/09 11:55:06 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/02/10 21:08:35 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,13 @@
 typedef struct s_piece
 {
 	int					value;
+	int					index;
 	struct s_piece		*next;
 	struct s_piece		*previous;
 }							t_piece;
 
-t_swap	*ft_add_content(int *stack_a, char *str_input);
+t_piece		*new_node(char *str_input);
+void		lstadd_back(t_piece **list, t_piece *new);
+int			*array(t_piece *list);
 
 #endif

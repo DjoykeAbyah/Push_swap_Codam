@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/02 19:34:23 by dreijans      #+#    #+#                 */
-/*   Updated: 2022/11/14 13:33:49 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/02/10 21:29:50 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ char	**ft_split(char const *s, char c)
 		split_str[j] = fill(&s[i], c, &i);
 		if (split_str[j] == NULL)
 			return (freedom(split_str));
-			j++;
+		j++;
 	}
 	split_str[j] = NULL;
 	return (split_str);

@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/14 09:41:41 by dreijans      #+#    #+#                 */
-/*   Updated: 2022/11/11 16:34:41 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/02/09 16:54:16 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	i = 0;
 	while (ft_iswhitespace(str[i]) && str[i] != '\0')
-	{
 		i++;
-	}
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
