@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 19:24:17 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/02/14 21:15:15 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/02/14 21:49:04 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,35 @@ int	length(t_piece *list)
 		i++;
 	}
 	return (i);
+}
+
+void	swap(t_piece *a, t_piece *b)
+{
+	int	temp;
+
+	temp = a->value;
+	a->value = b->value;
+	b->value = temp;
+}
+
+void	bubblesort(t_piece *start)
+{
+	int		i;
+	t_piece	*ptr;
+
+	if (start == NULL)
+		return ;
+	ptr = start;
+			printf("ptr[%i]\n", ptr->value);
+	while (ptr->next != NULL)
+	{
+		if (ptr->value > ptr->next->value)
+		{
+			swap(ptr->value, ptr->next->value);
+		}
+		ptr = ptr->next;
+	}
+	ptr = NULL;
 }
 
 int	*array(t_piece *list)
