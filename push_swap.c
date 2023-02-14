@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 19:24:17 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/02/10 21:02:27 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/02/14 21:15:15 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,9 @@ t_piece	*new_node(char *str_input)
 		//man exit
 		//atoi? maar what if alphabetic char first numcheck
 	new_node->value = ft_atoi(str_input);
+	new_node->index = -1;
 	new_node->next = NULL;
 	new_node->previous = NULL;
-	// keep doing this until next = null then previous is beginning?
-	printf("newnode_value[%i]\n", new_node->value);
 	return (new_node);
 }
 
@@ -83,27 +82,12 @@ int	*array(t_piece *list)
 	{
 		array[i] = list->value;
 		printf("array[%d]\n", array[i]);
+		printf("index[%i]\n", list->index);
 		i++;
 		list = list->next;
 	}
 	return (array);
 }
-
-// t_piece	*ft_index_it(t_piece *a)
-// {
-// 	t_piece	*b;
-// 	int		i;
-
-// 	b = a->next;
-// 	i = 0
-// 	if (b != NULL)
-// 	{
-// 		if (a->value > b->value)
-// 		{
-			
-// 		}
-// 	}
-// }
 
 /* is number check?
 empty string check?

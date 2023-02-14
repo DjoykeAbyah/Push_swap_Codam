@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/06 20:31:03 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/02/10 21:10:00 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/02/14 21:15:06 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,31 @@ int	main(int argc, char **argv)
 	t_piece		*list;
 
 	i = 0;
+	strings = NULL;
 	list = NULL;
-	while (i < argc)
+	if (argc == 2)
 	{
-		strings = ft_split(argv[i], ' ');
-		i++;
+		strings = ft_split(argv[1], ' ');
+		while (strings[i] != NULL)
+		{	
+			new = new_node(strings[i]);
+			lstadd_back(&list, new);
+			i++;
+		}
 	}
-	i = 0;
-	while (strings[i] != NULL)
-	{	
-		new = new_node(strings[i]);
-		// & address of the specific data type
-		lstadd_back(&list, new);
-		i++;
+	if (argc > 2)
+	{
+		//what if passed multiple strings??
+		while (argv[i + 1] != NULL)
+		{	
+			new = new_node(argv[i + 1]);
+			lstadd_back(&list, new);
+			i++;
+		}
 	}
 	array(list);
 	return (0);
 }
+
+// & address of the specific data type
+// system("leaks a.out");

@@ -6,7 +6,7 @@
 #    By: dreijans <dreijans@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/02/01 19:24:21 by dreijans      #+#    #+#                  #
-#    Updated: 2023/02/09 13:52:55 by dreijans      ########   odam.nl          #
+#    Updated: 2023/02/13 20:12:34 by dreijans      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,4 +46,4 @@ re: fclean all
 
 test: re
 	gcc *.c -g $(NAME)
-	./a.out "123 4 6"
+	./a.out 123 4 6
