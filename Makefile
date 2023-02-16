@@ -6,14 +6,15 @@
 #    By: dreijans <dreijans@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/02/01 19:24:21 by dreijans      #+#    #+#                  #
-#    Updated: 2023/02/13 20:12:34 by dreijans      ########   odam.nl          #
+#    Updated: 2023/02/16 16:24:17 by dreijans      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap.a
 CC = cc
 SRC = \
-main.c
+push_swap.c \
+main.c 
 OBJ_FILES = $(SRC:.c=.o)
 CFLAGS = -Wall -Wextra -Werror
 LIB = $(LIBDIR)/libft.a
@@ -45,5 +46,5 @@ fclean:
 re: fclean all
 
 test: re
-	gcc *.c -g $(NAME)
-	./a.out 123 4 6
+	gcc $(NAME) -g -fsanitize=address
+	./a.out  0 123 6 4

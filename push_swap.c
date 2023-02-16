@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 19:24:17 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/02/14 21:49:04 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/02/16 16:49:07 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	lstadd_back(t_piece **list, t_piece *new)
 		*list = new;
 }
 
-int	length(t_piece *list)
+int	list_length(t_piece *list)
 {
 	int	i;
 
@@ -67,55 +67,39 @@ int	length(t_piece *list)
 	return (i);
 }
 
-void	swap(t_piece *a, t_piece *b)
+void	indexing(t_piece *list)
 {
-	int	temp;
-
-	temp = a->value;
-	a->value = b->value;
-	b->value = temp;
-}
-
-void	bubblesort(t_piece *start)
-{
+	t_piece	*temp;
+	t_piece	*start;
 	int		i;
-	t_piece	*ptr;
-
-	if (start == NULL)
-		return ;
-	ptr = start;
-			printf("ptr[%i]\n", ptr->value);
-	while (ptr->next != NULL)
-	{
-		if (ptr->value > ptr->next->value)
-		{
-			swap(ptr->value, ptr->next->value);
-		}
-		ptr = ptr->next;
-	}
-	ptr = NULL;
-}
-
-int	*array(t_piece *list)
-{
-	int	i;
-	int	size;
-	int	*array;
+	int		lenght;
 
 	i = 0;
-	size = length(list);
-	array = malloc(sizeof (int) * size);
-	if (array == NULL)
-		return (NULL);
+	temp = list;
+	start = list;
+	lenght = list_length(list);
+	while (i < lenght)
+	{
+		list = start;
+		while (list)
+		{
+			if (temp->value > list->value && list->index == -1)
+				temp = list;
+			list = list->next;
+		}
+		temp->index = i;
+		i++;
+	}
+	print_list(list);
+}
+
+void	print_list(t_piece *list)
+{
 	while (list)
 	{
-		array[i] = list->value;
-		printf("array[%d]\n", array[i]);
-		printf("index[%i]\n", list->index);
-		i++;
+		printf("value[%d], index[%i]\n", list->value, list->index);
 		list = list->next;
 	}
-	return (array);
 }
 
 /* is number check?

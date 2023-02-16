@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 18:00:30 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/02/14 21:14:53 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/02/16 16:21:18 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ typedef struct s_piece
 
 t_piece		*new_node(char *str_input);
 void		lstadd_back(t_piece **list, t_piece *new);
-int			length(t_piece *list);
-int			*array(t_piece *list);
+int			list_length(t_piece *list);
+void		indexing(t_piece *list);
+void		print_list(t_piece *list);
 
 #endif

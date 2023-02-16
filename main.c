@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/06 20:31:03 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/02/14 21:15:06 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/02/16 16:24:31 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,25 @@ int	main(int argc, char **argv)
 		{	
 			new = new_node(strings[i]);
 			lstadd_back(&list, new);
+			indexing(list);
+			//adding index value without altering sequence + check duplicates
 			i++;
 		}
 	}
 	if (argc > 2)
 	{
 		//what if passed multiple strings??
+		//is lijst al sorted? kijken van klein naar groot.
 		while (argv[i + 1] != NULL)
 		{	
 			new = new_node(argv[i + 1]);
 			lstadd_back(&list, new);
+			indexing(list);
+			//adding index value without altering sequence + check duplicates
 			i++;
 		}
 	}
-	array(list);
+	print_list(list);
 	return (0);
 }
 
