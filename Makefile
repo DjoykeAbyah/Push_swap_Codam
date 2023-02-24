@@ -6,17 +6,19 @@
 #    By: dreijans <dreijans@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/02/01 19:24:21 by dreijans      #+#    #+#                  #
-#    Updated: 2023/02/16 16:24:17 by dreijans      ########   odam.nl          #
+#    Updated: 2023/02/24 18:59:00 by dreijans      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap.a
+
 CC = cc
 SRC = \
 push_swap.c \
+push_swap_commands.c \
 main.c 
 OBJ_FILES = $(SRC:.c=.o)
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 LIB = $(LIBDIR)/libft.a
 LIBDIR = Libft
 
@@ -28,8 +30,8 @@ $(LIB):
 	$(MAKE) -C $(LIBDIR) all --quiet
 	
 $(NAME): $(OBJ_FILES) $(LIB)
-		cp $(LIB) $(NAME) 
-		ar -src $(NAME) $(OBJ_FILES)
+		cp $(LIB) $(NAME)
+		ar -src $(NAME) $(OBJ_FILES) 
 
 %.o: %.c
 		@$(CC) -c $(CFLAGS) -o $@ $^
@@ -47,4 +49,4 @@ re: fclean all
 
 test: re
 	gcc $(NAME) -g -fsanitize=address
-	./a.out  0 123 6 4
+	./a.out 0 123 6 4

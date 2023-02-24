@@ -6,15 +6,11 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 19:24:17 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/02/16 16:49:07 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/02/24 13:42:02 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// char	*print_list(t_piece *list)
-// {
-// }
 
 t_piece	*new_node(char *str_input)
 {
@@ -24,7 +20,6 @@ t_piece	*new_node(char *str_input)
 	if (new_node == NULL)
 		return (NULL);
 		//man exit
-		//atoi? maar what if alphabetic char first numcheck
 	new_node->value = ft_atoi(str_input);
 	new_node->index = -1;
 	new_node->next = NULL;
@@ -49,6 +44,7 @@ void	lstadd_back(t_piece **list, t_piece *new)
 	{
 		back = lstlast(*list);
 		back->next = new;
+		new->previous = back;
 	}
 	else
 		*list = new;
@@ -80,17 +76,26 @@ void	indexing(t_piece *list)
 	lenght = list_length(list);
 	while (i < lenght)
 	{
-		list = start;
-		while (list)
+		start = list;
+		while (start->next)
 		{
-			if (temp->value > list->value && list->index == -1)
-				temp = list;
-			list = list->next;
+			if (temp->value == start->next->value)
+			{
+				printf("error duplicate found");
+				i = lenght;
+				//better exit?
+			}
+			if (temp->value > start->next->value && start->next->index == -1)
+				temp = start->next;
+			else if (temp->index != -1)
+				temp = start->next;
+			start = start->next;
 		}
-		temp->index = i;
+		if (temp->index == -1)
+			temp->index = i;
+			temp = list;
 		i++;
 	}
-	print_list(list);
 }
 
 void	print_list(t_piece *list)
