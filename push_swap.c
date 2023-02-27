@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 19:24:17 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/02/24 13:42:02 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/02/27 17:13:09 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ t_piece	*new_node(char *str_input)
 
 	new_node = malloc(sizeof (t_piece));
 	if (new_node == NULL)
-		return (NULL);
-		//man exit
+		exit(EXIT_FAILURE);
 	new_node->value = ft_atoi(str_input);
 	new_node->index = -1;
 	new_node->next = NULL;
@@ -81,9 +80,8 @@ void	indexing(t_piece *list)
 		{
 			if (temp->value == start->next->value)
 			{
-				printf("error duplicate found");
-				i = lenght;
-				//better exit?
+				printf("error duplicate found");//nog comform subject
+				exit(EXIT_FAILURE);
 			}
 			if (temp->value > start->next->value && start->next->index == -1)
 				temp = start->next;
