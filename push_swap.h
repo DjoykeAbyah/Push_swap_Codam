@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 18:00:30 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/02/27 17:20:19 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/02/28 15:12:20 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,10 @@ void		print_list(t_piece *list);
 
 void		sa(t_piece **a);
 void		sb(t_piece **b);
-void		pb(t_piece **a, t_piece **b);
 void		ss(t_piece **a, t_piece **b);
+void		pb(t_piece **top_s, t_piece **top_d);
+void		pa(t_piece **top_s, t_piece **top_d);
 void		pop(t_piece **p);
+// void		ra(t_piece **a);
 
 #endif

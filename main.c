@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/06 20:31:03 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/02/27 17:33:51 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/02/28 15:12:30 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,17 @@ int	main(int argc, char **argv)
 		}
 		indexing(a);
 	}
+	printf("list a before\n");
+	print_list(a);
+	printf("list b before\n");
+	print_list(b);
 	pb(&a, &b);
+	pa(&b, &a);
 	//sa(&a);
 	//pop(&a);
+	printf("list a after\n");
 	print_list(a);
+	printf("list b after\n");
 	print_list(b);
 	return (0);
 }

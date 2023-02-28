@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/24 17:17:10 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/02/27 20:20:43 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/02/28 15:12:16 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,30 @@ void	ss(t_piece **a, t_piece **b)
 	sb(b);
 }
 
+void	pb(t_piece **top_s, t_piece **top_d)
+{
+	t_piece	*temp_s;
+	t_piece	*temp_d;
+
+	temp_s = *top_s;
+	temp_d = *top_d;
+	*top_s = (*top_s)->next;
+	*top_d = temp_s;
+	temp_s->next = temp_d;
+}
+
+void	pa(t_piece **top_s, t_piece **top_d)
+{
+	t_piece	*temp_s;
+	t_piece	*temp_d;
+
+	temp_s = *top_s;
+	temp_d = *top_d;
+	*top_s = (*top_s)->next;
+	*top_d = temp_s;
+	temp_s->next = temp_d;
+}
+
 void	pop(t_piece **p)
 {
 	t_piece	*temp;
@@ -61,21 +85,7 @@ void	pop(t_piece **p)
 	free(temp);
 }
 
-void	pb(t_piece **source, t_piece **dest)
-{
-	t_piece	*temp_s;
-	t_piece	*temp_d;
-
-	temp_s = source;
-	temp_d = dest;
-	
-	source->next = dest;
-	dest->previous = source;
-}
-
 // void	ra(t_piece **a)
 // {
-// 	int = listlenght
-// 	listlast = *a //first element
-// 	while lenght != 0;
-// 	{
+	
+// }
