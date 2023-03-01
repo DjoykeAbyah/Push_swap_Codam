@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/24 17:17:10 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/02/28 15:12:16 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/03/01 14:35:49 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,28 @@ void	pop(t_piece **p)
 	free(temp);
 }
 
-// void	ra(t_piece **a)
-// {
-	
-// }
+void	ra(t_piece **a)
+{
+	t_piece	*temp;
+
+	temp = *a;
+	lstadd_back(a, temp);
+	*a = (*a)->next;
+	temp->next = NULL;
+}
+
+void	rb(t_piece **b)
+{
+	t_piece	*temp;
+
+	temp = *b;
+	lstadd_back(b, temp);
+	*b = (*b)->next;
+	temp->next = NULL;
+}
+
+void	rr(t_piece **a, t_piece **b)
+{
+	ra(a);
+	rb(b);
+}
