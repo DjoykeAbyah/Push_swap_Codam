@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 19:24:17 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/03/03 18:42:00 by djoyke        ########   odam.nl         */
+/*   Updated: 2023/03/06 13:55:53 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,5 +112,6 @@ void	print_list(t_piece *list)
 }
 
 /* is number check?
+max int min int check
 empty string check?
 - moet wel erin*/

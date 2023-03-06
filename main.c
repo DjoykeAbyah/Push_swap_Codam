@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/06 20:31:03 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/03/03 20:36:43 by djoyke        ########   odam.nl         */
+/*   Updated: 2023/03/06 18:45:01 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,18 +49,28 @@ int	main(int argc, char **argv)
 		}
 		indexing(a);
 	}
-	printf("list a before\n");
-	print_list(a);
-	printf("list b before\n");
-	print_list(b);
+	// printf("list a before\n");
+	// print_list(a);
+	// printf("list b before\n");
+	// print_list(b);
+	//b->previous = NULL;
 	// pb(&a, &b);
-	pb(&a, &b);
-	pb(&a, &b);
-	pb(&a, &b);
-	printf("list a between\n");
-	print_list(a);
-	printf("list b between\n");
-	print_list(b);
+	// pb(&a, &b);
+	// t_piece *test = b->next;
+	// printf("test->prev->value[%d]\n", test->next->previous->value);
+	// pb(&a, &b);
+	// pb(&a, &b);
+	// pa(&b, &a);
+	// pa(&b, &a);
+	// pa(&b, &a);
+	// pa(&b, &a);
+	// printf("list a between\n");
+	// print_list(a);
+	// printf("list b between\n");
+	// print_list(b);
+	// pa(&b, &a);
+	// pa(&b, &a);
+	// pa(&b, &a);
 	// pa(&b, &a);
 	// sa(&a);
 	//pop(&a);
@@ -68,12 +78,12 @@ int	main(int argc, char **argv)
 	// rb(&b);
 	// rr(&a, &b);
 	// rra(&a);
-	rrb(&b);
-	//rrr(&a, &b);
-	printf("list a after\n");
-	print_list(a);
-	printf("list b after\n");
-	print_list(b);
+	// rrb(&b);
+	// rrr(&a, &b);
+	// printf("list a after\n");
+	// print_list(a);
+	// printf("list b after\n");
+	// print_list(b);
 	return (0);
 }
 

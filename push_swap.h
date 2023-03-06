@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 18:00:30 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/03/03 19:35:22 by djoyke        ########   odam.nl         */
+/*   Updated: 2023/03/06 17:40:30 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ void		rb(t_piece **b);
 void		rr(t_piece **a, t_piece **b);
 void		rra(t_piece **a);
 void		rrb(t_piece **b);
-//void		rrr(t_piece *a, t_piece *b);
+void		rrr(t_piece **a, t_piece **b);
 
 #endif

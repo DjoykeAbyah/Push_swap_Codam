@@ -6,7 +6,7 @@
 #    By: dreijans <dreijans@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/02/01 19:24:21 by dreijans      #+#    #+#                  #
-#    Updated: 2023/03/03 19:16:28 by djoyke        ########   odam.nl          #
+#    Updated: 2023/03/06 16:14:58 by dreijans      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ push_swap.c \
 push_swap_commands.c \
 main.c 
 OBJ_FILES = $(SRC:.c=.o)
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 LIB = $(LIBDIR)/libft.a
 LIBDIR = Libft
 
