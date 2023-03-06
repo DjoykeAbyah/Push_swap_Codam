@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/25 14:19:08 by dreijans      #+#    #+#                 */
-/*   Updated: 2022/11/14 15:07:34 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/03/03 16:33:22 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	len = (ft_strlen(s1) + ft_strlen(s2)) + 1;
 	new_str = (char *)malloc(sizeof (char) * len);
-	if (new_str != '\0')
+	if (new_str != (void *)0)
 	{
 		ft_strlcpy(new_str, s1, (ft_strlen(s1) + 1));
 		ft_strlcat(new_str, s2, len);

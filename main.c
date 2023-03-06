@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/06 20:31:03 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/03/01 14:29:50 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/03/03 20:36:43 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ int	main(int argc, char **argv)
 	print_list(a);
 	printf("list b before\n");
 	print_list(b);
+	// pb(&a, &b);
+	pb(&a, &b);
 	pb(&a, &b);
 	pb(&a, &b);
 	printf("list a between\n");
@@ -62,8 +64,12 @@ int	main(int argc, char **argv)
 	// pa(&b, &a);
 	// sa(&a);
 	//pop(&a);
-	ra(&a);
-	rb(&b);
+	// ra(&a);
+	// rb(&b);
+	// rr(&a, &b);
+	// rra(&a);
+	rrb(&b);
+	//rrr(&a, &b);
 	printf("list a after\n");
 	print_list(a);
 	printf("list b after\n");
@@ -71,5 +77,5 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
+	// system("leaks a.out");
 // & address of the specific data type
-// system("leaks a.out");

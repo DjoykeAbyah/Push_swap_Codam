@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/18 14:02:44 by dreijans      #+#    #+#                 */
-/*   Updated: 2022/11/11 16:48:43 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/03/03 16:33:04 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	ptrd = (char *)dst;
 	ptrs = (char *)src;
-	if (ptrd == '\0' && ptrs == '\0')
+	if (ptrd == (void *)0 && ptrs == (void *)0)
 	{
 		return (NULL);
 	}

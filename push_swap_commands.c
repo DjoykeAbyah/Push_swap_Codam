@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/24 17:17:10 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/03/01 14:35:49 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/03/03 20:36:28 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	ss(t_piece **a, t_piece **b)
 	sb(b);
 }
 
+//push from top of a to top of b
 void	pb(t_piece **top_s, t_piece **top_d)
 {
 	t_piece	*temp_s;
@@ -64,6 +65,7 @@ void	pb(t_piece **top_s, t_piece **top_d)
 	temp_s->next = temp_d;
 }
 
+//push from top of b to top of a
 void	pa(t_piece **top_s, t_piece **top_d)
 {
 	t_piece	*temp_s;
@@ -110,3 +112,31 @@ void	rr(t_piece **a, t_piece **b)
 	ra(a);
 	rb(b);
 }
+
+void	rra(t_piece **a)
+{
+	t_piece *temp;
+	t_piece *tail;
+
+	tail = lstlast(*a);
+	temp = tail->previous;
+	lstadd_front(a, tail);
+	temp->next = NULL;
+}
+
+void	rrb(t_piece **b)
+{
+	t_piece *temp;
+	t_piece *tail;
+
+	tail = lstlast(*b);
+	temp = tail->previous;
+	lstadd_front(b, tail);
+	temp->next = NULL;
+}
+
+// //void	rrr(t_piece *a, t_piece *b)
+// {
+// 	rra(&a);
+// 	rrb(&b);
+// }
