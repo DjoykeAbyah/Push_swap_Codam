@@ -6,66 +6,24 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 19:24:17 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/03/06 13:55:53 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/03/07 21:28:34 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_piece	*new_node(char *str_input)
+void	check_duplicates(t_piece *start, t_piece *temp)
 {
-	t_piece	*new_node;
-
-	new_node = malloc(sizeof (t_piece));
-	if (new_node == NULL)
+	if (temp->value == start->next->value)
+	{
+		printf("error duplicate found");
 		exit(EXIT_FAILURE);
-	new_node->value = ft_atoi(str_input);
-	new_node->index = -1;
-	new_node->next = NULL;
-	new_node->previous = NULL;
-	return (new_node);
-}
-
-t_piece	*lstlast(t_piece *lst)
-{
-	if (lst == NULL)
-		return (NULL);
-	while (lst->next != NULL)
-		lst = lst->next;
-	return (lst);
-}
-
-void	lstadd_back(t_piece **list, t_piece *new)
-{
-	t_piece	*back;
-
-	if (*list)
-	{
-		back = lstlast(*list);
-		back->next = new;
-		new->previous = back;
 	}
-	else
-		*list = new;
 }
 
-void	lstadd_front(t_piece **lst, t_piece *new)
+void	sort_check(t_piece *list)
 {
-	new->next = *lst;
-	*lst = new;
-}
-
-int	list_length(t_piece *list)
-{
-	int	i;
-
-	i = 0;
-	while (list)
-	{
-		list = list->next;
-		i++;
-	}
-	return (i);
+	
 }
 
 void	indexing(t_piece *list)
@@ -73,22 +31,16 @@ void	indexing(t_piece *list)
 	t_piece	*temp;
 	t_piece	*start;
 	int		i;
-	int		lenght;
 
 	i = 0;
 	temp = list;
 	start = list;
-	lenght = list_length(list);
-	while (i < lenght)
+	while (i < list_length(list))
 	{
 		start = list;
 		while (start->next)
 		{
-			if (temp->value == start->next->value)
-			{
-				printf("error duplicate found");//nog comform subject
-				exit(EXIT_FAILURE);
-			}
+			check_duplicates(start, temp);
 			if (temp->value > start->next->value && start->next->index == -1)
 				temp = start->next;
 			else if (temp->index != -1)
@@ -110,8 +62,3 @@ void	print_list(t_piece *list)
 		list = list->next;
 	}
 }
-
-/* is number check?
-max int min int check
-empty string check?
-- moet wel erin*/

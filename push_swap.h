@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 18:00:30 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/03/06 17:40:30 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/03/07 20:35:39 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int			list_length(t_piece *list);
 void		indexing(t_piece *list);
 void		print_list(t_piece *list);
 t_piece		*lstlast(t_piece *lst);
+void		check_duplicates(t_piece *start, t_piece *temp);
 void		lstadd_front(t_piece **lst, t_piece *new);
 
 void		sa(t_piece **a);
